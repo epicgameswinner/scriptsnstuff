@@ -1,0 +1,57 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"))()
+
+local Window = Library:CreateWindow('Kyero + Edgar Hub', 'EGOIST', 'Kyero + Edgar', 'rbxassetid://10618928818', false, 'VisualUIConfigs', 'Default')
+
+local Tab = Window:CreateTab('Main', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection('Game')
+
+
+--values
+_G.kick = true
+_G.destroy = true
+
+--functions
+function autokick()
+    while _G.kick == true do
+    if _G.destroy == false then
+local args = {
+    [1] = 0.5,
+    [2] = CFrame.new(-26.664182662963867, 11.859983444213867, 144.21170043945312) * CFrame.Angles(-0.4808640480041504, -0.21617399156093597, -0.11144007742404938),
+    [3] = "Front"
+}
+
+game:GetService("ReplicatedStorage").Kick:FireServer(unpack(args))
+wait()
+else
+   local args = {
+    [1] = (0/0),
+    [2] = CFrame.new(-26.664182662963867, 11.859983444213867, 144.21170043945312) * CFrame.Angles(-0.4808640480041504, -0.21617399156093597, -0.11144007742404938),
+    [3] = "Front"
+}
+
+game:GetService("ReplicatedStorage").Kick:FireServer(unpack(args)) 
+wait()
+end
+end
+end
+
+
+
+--buttons
+local Toggle = Section:CreateToggle('Auto Kick', false, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+    print(Value)
+_G.kick = Value
+autokick()
+end)
+--buttons
+local Toggle = Section:CreateToggle('Destroy Ball (Enable kick and walk near ball)', false, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+    print(Value)
+_G.destroy = Value
+end)
+
+local Slider = Section:CreateSlider('WalkSpeed', 16, 200, 16, Color3.fromRGB(0, 125, 255), function(s)
+    
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+end)
