@@ -51,36 +51,37 @@ local Toggle = Section1:CreateToggle('Candy Bag', true, Color3.fromRGB(0, 125, 2
         getgenv().a = l
    end)
 
-local Button = Section2:CreateButton('Get Legendary Dozer (Retake only)', function()
+local Button = Section2:CreateButton('Get Legendary Dozer', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",1)
 end)
 
-local Button = Section2:CreateButton('Get Deathnote (Retake only)', function()
+local Button = Section2:CreateButton('Get Deathnote', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",2)
 end)
 
-local Button = Section2:CreateButton('Get 3 Sword Style (Retake only)', function()
+local Button = Section2:CreateButton('Get 3 Sword Style', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",3)
 end)
 
-local Button = Section2:CreateButton('Get One Trick Phony (Retake only)', function()
+local Button = Section2:CreateButton('Get One Trick Phony', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",4)
 end)
 
-local Button = Section2:CreateButton('Get Stab Stab Stab (Retake only)', function()
+local Button = Section2:CreateButton('Get Stab Stab Stab', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",5)
 end)
 
-local Button = Section2:CreateButton('Get Something (Retake only)', function()
+local Button = Section2:CreateButton('Get Something', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",6)
 end)
 
-local Button = Section2:CreateButton('Get Domain Expansion (Retake only)', function()
+local Button = Section2:CreateButton('Get Domain Expansion', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",7)
 end)
 
-local Button = Section2:CreateButton('Get Grandma (Retake only)', function()
+local Button = Section2:CreateButton('Get Grandma', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Uncommon",31)
 end)
 
-local Label = Section3:CreateLabel("Candy bag, Russian vitamins and dozerify effects are permanent")
+local Label = Section3:CreateLabel("All item effects in stat changer tab are permanent")
+local Label = Section3:CreateLabel("Retake Mode buttons only work when the gui is open")
