@@ -8,8 +8,8 @@ local Section = Tab:CreateSection('Game')
 
 
 --values
-_G.kick = true
-_G.destroy = true
+_G.kick = false
+_G.destroy = false
 
 --functions
 function autokick()
@@ -51,7 +51,8 @@ _G.destroy = Value
 end)
 
 local Slider = Section:CreateSlider('WalkSpeed', 16, 200, 16, Color3.fromRGB(0, 125, 255), function(s)
-    
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-
+    while true do
+        wait()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end
 end)
