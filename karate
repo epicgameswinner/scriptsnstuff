@@ -1,0 +1,33 @@
+while true do 
+    wait()
+    local plr = game:GetService("Players").LocalPlayer
+local nearestPlayer, nearestMagnitude = nil, 9e9;
+
+for i,v in next, game:GetService("Players"):GetPlayers() do 
+    -- loop through all players ingame
+    if v ~= plr and v.Character ~= nil then 
+    -- if the current player is not the localplayer (you) and if the player's character isnt nil (nonexistant)
+        local tempMagnitude = (plr.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude 
+        -- https://create.roblox.com/docs/reference/engine/datatypes/Vector3#Magnitude
+        
+        if nearestMagnitude > tempMagnitude then 
+        -- checks if the nearest player is farther than the current player
+            nearestPlayer = v 
+            -- set nearestPlayer variable to the current player since its closer than the previous nearest player
+            nearestMagnitude = tempMagnitude 
+            -- same with the nearestMagnitude variable
+        end
+    end
+end
+        if nearestMagnitude >= 10 then
+        for i,v in pairs(game:GetService("Workspace")[nearestPlayer.Name].Head:GetChildren()) do
+            if v.ClassName == "Sound" then
+            while v.IsPlaying == true do 
+            mouse2press()
+            wait(0.20)
+            mouse2release()
+            end 
+        end
+    end
+end
+end
