@@ -19,7 +19,7 @@ for i,v in next, game:GetService("Players"):GetPlayers() do
         end
     end
 end
-        if nearestMagnitude >= 10 then
+        if nearestMagnitude <= 10 then
         for i,v in pairs(game:GetService("Workspace")[nearestPlayer.Name].Head:GetChildren()) do
             if v.ClassName == "Sound" then
             while v.IsPlaying == true do 
