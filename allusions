@@ -1,0 +1,83 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"))()
+ 
+local Window = Library:CreateWindow('', 'Allusions', '', 'rbxassetid://10618928818', false, 'VisualUIConfigs', 'Default')
+ 
+local Tab1 = Window:CreateTab('Stat Changer', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+local Tab2 = Window:CreateTab('Retake Mode', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+local Tab3 = Window:CreateTab('How to use', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+ 
+local Section1 = Tab1:CreateSection('Stat Changer')
+local Section2 = Tab2:CreateSection('Retake Mode')
+local Section3 = Tab3:CreateSection('How to use')
+ 
+local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRGB(0, 125, 255), 0.25, function(Value1)
+    _G.StatChanger = Value1
+ 
+    game.RunService.RenderStepped:Connect(function()
+        
+ 
+ 
+ 
+        if getgenv().a == true then
+                game.Players.LocalPlayer.Character.Red:Destroy()
+                game.Players.LocalPlayer.Character.Blue:Destroy()
+                game.Players.LocalPlayer.Character.Yellow:Destroy()
+            end
+        if getgenv().d == true then
+                game.Lighting.Atmosphere:Destroy()
+                game.Players.LocalPlayer.Character.RussianTripp:Destroy()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins.HeartBeat:Destroy()
+        end
+end)
+end)
+
+ local Button = Section1:CreateButton('Inf Dozerify (Click When You Have Armour', function()
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v.Name == "Dozerify" then
+            v:Destroy()
+        end
+    end
+end)
+ 
+local Toggle = Section1:CreateToggle('Infinite Russian Vitamins', false, Color3.fromRGB(0, 125, 255), 0.25, function(k)
+        getgenv().d = k
+   end)
+ 
+local Toggle = Section1:CreateToggle('Candy Bag', false, Color3.fromRGB(0, 125, 255), 0.25, function(l)
+        getgenv().a = l
+   end)
+ 
+local Button = Section2:CreateButton('Get Legendary Dozer', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",1)
+end)
+ 
+local Button = Section2:CreateButton('Get Deathnote', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",2)
+end)
+ 
+local Button = Section2:CreateButton('Get 3 Sword Style', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",3)
+end)
+ 
+local Button = Section2:CreateButton('Get Ice and fire', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",6)
+end)
+ 
+local Button = Section2:CreateButton('Get Dragon Install (op kit)', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",7)
+end)
+ 
+local Button = Section2:CreateButton('Get null/cmd', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Rare",10)
+end)
+ 
+local Button = Section2:CreateButton('Get Unstoppable Force (op)', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Legendary",7)
+end)
+ 
+local Button = Section2:CreateButton('Get Air Juggler', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Uncommon",31)
+end)
+ 
+local Label = Section3:CreateLabel("All item effects in stat changer tab are permanent until death")
+local Label = Section3:CreateLabel("Retake Mode buttons only work when the gui is open")
