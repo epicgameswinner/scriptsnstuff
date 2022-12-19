@@ -20,13 +20,13 @@ local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRG
  
  
         if getgenv().a == true then
-            if game.Players.LocalPlayer.Character:FindFirstchild("Red") then
+            if game.Players.LocalPlayer.Character:FindFirstChild("Red") then
             game.Players.LocalPlayer.Character.Red:Destroy()
             end
-                if game.Players.LocalPlayer.Character:FindFirstchild("Blue") then
+                if game.Players.LocalPlayer.Character:FindFirstChild("Blue") then
                 game.Players.LocalPlayer.Character.Blue:Destroy()
                 end
-            if game.Players.LocalPlayer.Character:FindFirstchild("Yellow") then
+            if game.Players.LocalPlayer.Character:FindFirstChild("Yellow") then
             game.Players.LocalPlayer.Character.Red:Destroy()
             end
             end
@@ -34,10 +34,10 @@ local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRG
             if game.Lighting:FindFirstchild("Atmosphere") then
                 game.Lighting.Atmosphere:Destroy()
                 end
-                if game.Players.LocalPlayer.Character:FindFirstchild("RussianTripp") then
+                if game.Players.LocalPlayer.Character:FindFirstChild("RussianTripp") then
                 game.Players.LocalPlayer.Character.RussianTripp:Destroy()
                 end
-                if game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins:FindFirstchild("HeartBeat") then
+                if game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins:FindFirstChild("HeartBeat") then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins.HeartBeat:Destroy()
                 end
                
@@ -91,6 +91,10 @@ end)
  
 local Button = Section2:CreateButton('Get Air Juggler', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Uncommon",31)
+end)
+
+local Button = Section2:CreateButton('Get A-train', function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Rare",34)
 end)
  
 local Label = Section3:CreateLabel("All item effects in stat changer tab are permanent")
