@@ -37,11 +37,12 @@ local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRG
                 if game.Players.LocalPlayer.Character:FindFirstChild("RussianTripp") then
                 game.Players.LocalPlayer.Character.RussianTripp:Destroy()
                 end
+                if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("RussianVitamins") then
                 if game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins:FindFirstChild("HeartBeat") then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.RussianVitamins.HeartBeat:Destroy()
+                end           
                 end
-               
-        end
+    end
 end)
 end)
 
@@ -92,10 +93,9 @@ end)
 local Button = Section2:CreateButton('Get Air Juggler', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Uncommon",31)
 end)
-
+ 
 local Button = Section2:CreateButton('Get A-train', function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainGui.Retake.Script.RemoteEvent:FireServer("Rare",34)
 end)
- 
 local Label = Section3:CreateLabel("All item effects in stat changer tab are permanent")
 local Label = Section3:CreateLabel("Retake Mode buttons only work when the gui is open")
