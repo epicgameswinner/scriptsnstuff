@@ -27,7 +27,7 @@ local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRG
                 game.Players.LocalPlayer.Character.Blue:Destroy()
                 end
             if game.Players.LocalPlayer.Character:FindFirstChild("Yellow") then
-            game.Players.LocalPlayer.Character.Red:Destroy()
+            game.Players.LocalPlayer.Character.Yellow:Destroy()
             end
             end
         if getgenv().d == true then
