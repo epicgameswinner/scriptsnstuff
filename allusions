@@ -31,7 +31,7 @@ local Toggle = Section1:CreateToggle('Enable Stat Changer', false, Color3.fromRG
             end
             end
         if getgenv().d == true then
-            if game.Lighting:FindFirstchild("Atmosphere") then
+            if game.Lighting:FindFirstChild("Atmosphere") then
                 game.Lighting.Atmosphere:Destroy()
                 end
                 if game.Players.LocalPlayer.Character:FindFirstChild("RussianTripp") then
